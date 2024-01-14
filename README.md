@@ -8,8 +8,7 @@ App to generate badges for rooms on Jagiellonian University.
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
   - [Clone the Repository](#clone-the-repository)
-  - [Build the Application](#build-the-application)
-  - [Run the Application](#run-the-application)
+  - [Build and Run the Application](#build-and-run-the-application)
 
 #### Prerequisites
 
