@@ -19,7 +19,7 @@
                     <img src="/logo_uj.png" alt="placeholder"/>
                     @if (editMode)
                     {
-                        <textarea class="roomNumber" rows="1" cols="20" @bind="@roomNumber"></textarea>
+                        <textarea class="roomNumber" rows="1" cols="10" @bind="@roomNumber"></textarea>
                     }
                     else
                     {
@@ -29,7 +29,7 @@
 
                 @if (editMode)
                 {
-                    <textarea class="names" rows="4" cols="35" @bind="@names"></textarea>
+                    <textarea class="names" rows="4" cols="20" @bind="@names"></textarea>
                 }
                 else
                 {
@@ -44,7 +44,7 @@
             </BlazorCaptureElement>
         </div>
 
-        <div class="grid">
+        <div class="grid hideWhenPrint">
 
             <Button Color="ButtonColor.Primary" Size="Size.Large" @onclick="OnShowRoomNumberClick"> Numer sali </Button>
             <Button Color="ButtonColor.Primary" Size="Size.Large" @onclick="OnShowNamesClick"> Nazwiska </Button>
@@ -77,6 +77,17 @@
 
 <Modal @ref="Names" title="Nazwiska" IsVerticallyCentered="true">
     <BodyTemplate>
+        <div class="form-group">
+            @if(names.Split('\n').Length < 5)
+            {
+                <input type="text" value="@tempName" @oninput="UpdateTempName" class="form-control" placeholder="Podaj nazwisko" />
+                <button class="btn btn-primary" @onclick="AddName">Add</button>
+            }
+            else
+            {
+                <div>Nie możesz dodać więcej nazwisk!</div>
+            }
+        </div>
     </BodyTemplate>
     <FooterTemplate>
     </FooterTemplate>
@@ -84,7 +95,7 @@
 
 <Modal @ref="Load" title="Wczytaj" IsVerticallyCentered="true">
     <BodyTemplate>
-        <InputFile OnChange="@LoadFiles" multiple />
+        <InputFile OnChange="@LoadFiles" />
     </BodyTemplate>
     <FooterTemplate>
     </FooterTemplate>
@@ -94,17 +105,28 @@
     private Modal RoomNumber = default!;
     private Modal Names = default!;
     private Modal Load = default!;
-    private string roomNumber;
+    private string? roomNumber;
     private ElementReference Img;
-    private IBrowserFile loadedFile;
+    private IBrowserFile? loadedFile;
     private long maxFileSize = 1024 * 15;
     private int maxAllowedFiles = 3;
     private bool isLoading;
+    private string tempName = "";
     private string names = "";
     private bool editMode = false;
 
-    private RoomInfo info;
+    private RoomInfo? info;
 
+
+    private void UpdateTempName(ChangeEventArgs e)
+    {
+        tempName = e.Value.ToString();
+    }
+    private void AddName()
+    {
+        if(tempName.Length > 0) names = names + '\n' + tempName;
+        tempName="";
+    }
     private async Task LoadFiles(InputFileChangeEventArgs e)
     {
         loadedFile = e.File;
@@ -155,5 +177,5 @@
         await Names.HideAsync();
         await Load.HideAsync();
     }
-
 }
+   
