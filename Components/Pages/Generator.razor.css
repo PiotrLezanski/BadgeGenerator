@@ -1,0 +1,90 @@
+img {
+    width: 200px;
+    height: 300px;
+    fill: var(--main-white);
+}
+
+.generator {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 90vh;
+    width: 100%;
+}
+
+.generator__editWindow {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 4px dotted var(--olive);
+    background-color: var(--main-white);
+}
+
+.generator__controlPanel {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.generator__button {
+    background-color: var(--gold) ;
+    color:  var(--dark-text-blue);
+    border: 2px solid var(--dark-olive);
+    border-radius: 1rem;
+    text-align: center;
+    justify-content: center;
+    flex: 1;
+    padding: 0.5rem 0;
+    margin: 0.25rem 0 0.25rem;
+    line-height: 2rem;
+}
+
+.generator__button:hover {
+    box-shadow: 0 0 20px var(--olive);
+}
+
+.generator__header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 20px;
+}
+
+
+
+.shownames {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5px;
+    margin: 10px;
+}
+
+
+
+.field {
+    width: 100%;
+    margin: 10px;
+}
+
+.field Button {
+    width: 100%;
+}
+
+.roomNumber {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 100px;
+    margin: 100px;
+}
+
+.names {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 70px;
+    margin: 0 100px;
+}
