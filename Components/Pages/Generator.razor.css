@@ -1,9 +1,3 @@
-img {
-    width: 200px;
-    height: 300px;
-    fill: var(--main-white);
-}
-
 .generator {
     display: flex;
     flex-direction: column;
@@ -19,6 +13,13 @@ img {
     height: 100%;
     border: 4px dotted var(--olive);
     background-color: var(--main-white);
+    
+    & img {
+        width: 200px;
+        height: 300px;
+        fill: var(--main-white);
+        
+    }
 }
 
 .generator__controlPanel {
@@ -82,9 +83,15 @@ img {
     margin: 100px;
 }
 
-.names {
+.names__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.names__name {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 500;
     font-size: 70px;
     margin: 0 100px;
+    text-align: end;
 }

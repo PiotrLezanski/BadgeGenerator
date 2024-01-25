@@ -42,10 +42,12 @@ App to easily generate badges for Jagiellonian University rooms.
                 }
                 else
                 {
+                    <div class="names__container">
                     @foreach (var name in names.Split('\n'))
-                    {
-                        <p class="names">@name</p>
-                    }
+                                        {
+                                            <p class="names__name">@name</p>
+                                        }    
+                    </div>
                 }
 
 
