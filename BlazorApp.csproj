@@ -12,4 +12,8 @@
         <PackageReference Include="jquery" Version="3.7.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\js\" />
+    </ItemGroup>
+
 </Project>

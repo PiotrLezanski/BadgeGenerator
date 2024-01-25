@@ -1,28 +1,59 @@
 img {
     width: 200px;
     height: 300px;
+    fill: var(--main-white);
 }
 
-.positioning {
+.generator {
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 90vh;
     width: 100%;
 }
 
-.header {
+.generator__editWindow {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 4px dotted var(--olive);
+    background-color: var(--main-white);
+}
+
+.generator__controlPanel {
     display: flex;
     flex-direction: row;
+    margin: 1rem 0;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.generator__button {
+    background-color: var(--gold) ;
+    color:  var(--dark-text-blue);
+    border: 2px solid var(--dark-olive);
+    border-radius: 1rem;
+    text-align: center;
+    justify-content: center;
+    flex: 1;
+    padding: 0.5rem 0;
+    margin: 0.25rem 0 0.25rem;
+    line-height: 2rem;
+}
+
+.generator__button:hover {
+    box-shadow: 0 0 20px var(--olive);
+}
+
+.generator__header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
     padding: 20px;
 }
 
-.grid {
-    width: 25%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
-    margin: 10px;
-    justify-content: flex-end;
-}
+
 
 .shownames {
     display: flex;
@@ -33,12 +64,7 @@ img {
     margin: 10px;
 }
 
-.main-page {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 75%;
-}
+
 
 .field {
     width: 100%;

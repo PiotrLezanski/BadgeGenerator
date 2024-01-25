@@ -1,11 +1,20 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --main-white: #FFFFFF;
+    --dark-blue: #054e79;
+    --dark-text-blue: #02304b;
+    --light-blue: #4E94BF;
+    --gold: #F2B90F;
+    --dark-gold: #8d6d06;
+    --olive: #A3A64E;
+    --dark-olive: #4d4f1f;
+    
 }
 
 a, .btn-link {
     color: #006bb7;
 }
-
+    
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
